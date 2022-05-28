@@ -1,9 +1,9 @@
 package arrays
 
-func Sum(mas [5]int) interface{} {
-	s := 0
-	for i := 0; i < len(mas); i++ {
-		s += mas[i]
+func Sum(numbers []int) int {
+	sum := 0
+	for _, number := range numbers {
+		sum += number
 	}
-	return s
+	return sum
 }
