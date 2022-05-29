@@ -1,4 +1,4 @@
-package SMI
+package smi
 
 import "math"
 
