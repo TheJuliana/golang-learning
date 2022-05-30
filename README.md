@@ -8,6 +8,13 @@ Short bio and motivation in learning golang.
 
 # Learned lessons
 
+### adder_test - 100.0%
+
+<details>
+  <summary><code>func Add(x, y int) int</code></summary>
+
+</details>
+
 ### arrays - 100.0%
 
 <details>
@@ -17,13 +24,6 @@ Short bio and motivation in learning golang.
 
 <details>
   <summary><code>func SumAllTails(numbersToSum ...[]int) []int</code></summary>
-
-</details>
-
-### adder_test - 100.0%
-
-<details>
-  <summary><code>func Add(x, y int) int</code></summary>
 
 </details>
 
@@ -70,6 +70,30 @@ func (w *Wallet) Balance() Bitcoin
 func (w *Wallet) Deposit(amount Bitcoin)
 
 func (w *Wallet) Withdraw(amount Bitcoin) error
+### maps - 83.3%
+CONSTANTS
+
+const (
+	ErrNotFound         = DictionaryErr("could not find the word you were looking for")
+	ErrWordExists       = DictionaryErr("cannot add word because it already exists")
+	ErrWordDoesNotExist = DictionaryErr("cannot update word because it does not exist")
+)
+
+TYPES
+
+type Dictionary map[string]string
+
+func (d Dictionary) Add(word, definition string) error
+
+func (d Dictionary) Delete(word string)
+
+func (d Dictionary) Search(word string) (string, error)
+
+func (d Dictionary) Update(word, definition string) error
+
+type DictionaryErr string
+
+func (e DictionaryErr) Error() string
 ### smi - 100.0%
 TYPES
 
@@ -98,27 +122,14 @@ type Triangle struct {
 }
 
 func (t Triangle) Area() float64
-### maps - 83.3%
-CONSTANTS
+### dependency - 33.3%
 
-const (
-	ErrNotFound         = DictionaryErr("could not find the word you were looking for")
-	ErrWordExists       = DictionaryErr("cannot add word because it already exists")
-	ErrWordDoesNotExist = DictionaryErr("cannot update word because it does not exist")
-)
+<details>
+  <summary><code>func Greet(writer io.Writer, name string)</code></summary>
 
-TYPES
+</details>
 
-type Dictionary map[string]string
+<details>
+  <summary><code>func MyGreeterHandler(w http.ResponseWriter, r *http.Request)</code></summary>
 
-func (d Dictionary) Add(word, definition string) error
-
-func (d Dictionary) Delete(word string)
-
-func (d Dictionary) Search(word string) (string, error)
-
-func (d Dictionary) Update(word, definition string) error
-
-type DictionaryErr string
-
-func (e DictionaryErr) Error() string
+</details>

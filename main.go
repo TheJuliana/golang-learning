@@ -10,6 +10,7 @@ import (
 
 // Checks all additional installations.
 func main() {
+
 	version, err := exec.Command("golangci-lint", "--version").Output()
 	if err != nil {
 		log.Fatal(err)
